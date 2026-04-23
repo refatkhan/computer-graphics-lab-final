@@ -1,0 +1,179 @@
+
+// ===================== 1. POSITION VALUE =====================
+// Object screen er kothay thakbe seta control kore
+
+drawCircle(0.0f, 0.75f, 0.08f); 
+// 0.0f = x position (center)
+// 0.75f = y position (up side)
+// => value change korle object move korbe
+
+// Example:
+// x = 0.5f → right e jabe
+// y = -0.5f → niche nambe
+
+
+
+// ===================== 2. SIZE VALUE =====================
+// Object er size control kore
+
+drawCircle(0.0f, 0.75f, 0.08f);
+// 0.08f = radius (size)
+
+// Example:
+// 0.08 → 0.2 = boro circle
+// 0.08 → 0.01 = choto circle
+
+
+
+// ===================== 3. COLOR VALUE (RGB) =====================
+// Object er color set kore
+
+glColor3f(1.0f, 0.9f, 0.2f);
+// (R, G, B) → 0.0 to 1.0 range
+
+// Example:
+// (1,0,0) = red
+// (0,1,0) = green
+// (0,0,1) = blue
+// (1,1,1) = white
+
+
+
+// ===================== 4. TRANSPARENCY VALUE (RGBA) =====================
+// Alpha (A) value diye transparency control
+
+glColor4f(1.0f, 1.0f, 0.0f, 0.3f);
+// last value (0.3f) = transparency
+
+// Example:
+// 1.0 = fully solid
+// 0.3 = transparent glow
+
+
+
+// ===================== 5. ANIMATION SPEED VALUE =====================
+// Object koto fast move korbe seta control kore
+
+cloudX += 0.002f;
+// small value = slow movement
+
+// Example:
+// 0.002 → slow
+// 0.05 → fast
+// negative → opposite direction
+
+
+
+// ===================== 6. LOOP / COUNT VALUE =====================
+// koto gula object draw hobe seta control kore
+
+for (int i = 0; i < 400; i++) {
+    // rain drop draw
+}
+
+// Example:
+// 400 → medium rain
+// 100 → light rain
+// 800 → heavy rain
+
+
+
+// ===================== 7. MATHEMATICAL VALUE (WAVE / MOTION) =====================
+// sin/cos use kore smooth animation create kora
+
+float y = 0.01f * sinf(wavePhase + i * 0.3f);
+
+// Example:
+// 0.01f = wave height
+// 0.3f = frequency
+
+// change korle:
+// amplitude ↑ → boro wave
+// frequency ↑ → tight wave
+
+
+
+// ===================== 8. SCALE VALUE =====================
+// same object ke choto/big korte use hoy
+
+drawTree(x, y, 1.0f); // normal size
+drawTree(x, y, 0.5f); // choto tree
+
+// Example:
+// scale ↑ → boro object
+// scale ↓ → choto object
+
+
+
+// ===================== 9. LINE WIDTH VALUE =====================
+// line koto mota hobe
+
+glLineWidth(3.0f);
+
+// Example:
+// 1.0 → thin line
+// 5.0 → thick line
+
+
+
+// ===================== 10. SEGMENT VALUE (SMOOTHNESS) =====================
+// circle/ellipse koto smooth hobe
+
+drawCircle(0.0f, 0.0f, 0.1f, 120);
+
+// Example:
+// 10 → polygon look
+// 120 → smooth circle
+// 200 → extra smooth
+
+
+
+// ===================== 11. ANGLE VALUE =====================
+// arc ba rotation control
+
+drawArc(0.0f, 0.0f, 0.2f, 0.0f, PI);
+
+// Example:
+// 0 → PI = half circle
+// 0 → 2PI = full circle
+
+
+
+// ===================== 12. DIRECTION VALUE =====================
+// movement direction control
+
+birdX -= 0.003f;
+// minus = left direction
+// plus = right direction
+
+
+
+// ===================== 13. RESET / BOUNDARY VALUE =====================
+// screen er baire gele abar start korar jonno
+
+if (cloudX > 1.2f) cloudX = -1.2f;
+
+// Example:
+// right side theke ber hole left theke abar start
+
+
+
+// ===================== 14. NORMALIZATION VALUE =====================
+// pixel coordinate ke OpenGL coordinate e convert
+
+glVertex2f(x / 1000.0f, y / 1000.0f);
+
+// Example:
+// na dile object visible na hote pare
+
+
+
+// ===================== FINAL UNDERSTANDING =====================
+// Sob value mile pura scene control kore:
+
+// Position → kothay thakbe
+// Size → koto boro hobe
+// Color → dekhte kemon
+// Animation → kivabe move korbe
+
+// 👉 Ei gula change korlei pura scene change hoy 🔥
